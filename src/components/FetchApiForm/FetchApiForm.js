@@ -31,7 +31,11 @@ class Main extends React.Component {
                 <button onClick={this.getApiData}>
                     What is jest?
                 </button>
-                {this.state.response.info}
+                <div className="get-api-form">
+                    <div className="text">
+                        {this.state.response.info}
+                    </div>
+                </div>
             </div>
         )
     };

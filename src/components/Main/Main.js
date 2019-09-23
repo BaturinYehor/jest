@@ -2,6 +2,7 @@ import React from "react";
 import FetchApiForm from "../FetchApiForm/FetchApiForm"
 import Header from "../Header/Header"
 import {Redirect} from "react-router-dom"
+import CalculatorForm from "../Calculator/CalculatorForm";
 
 class Main extends React.Component {
 
@@ -23,7 +24,7 @@ class Main extends React.Component {
                                 <FetchApiForm/>
                             </div>
                             <div className="col-sm-6">
-                                some dummy text
+                                <CalculatorForm />
                             </div>
                         </div>
                     </div>
