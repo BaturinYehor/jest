@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, Redirect} from "react-router-dom"
+import {Route} from "react-router-dom"
 import {BrowserRouter} from 'react-router-dom/cjs/react-router-dom.min';
 import Greeting from './components/Greeting/Geeting';
 import Main from './components/Main/Main';
@@ -13,16 +13,9 @@ class App extends React.Component {
         }
     };
 
-    redirectToTarget = () => {
-        if (this.state.redirectToMain) {
-            return <Redirect to='/somewhere'/>;
-        }
-    };
-
     render() {
         return (
             <BrowserRouter>
-                        {this.redirectToTarget()}
                         <Route
                             path='/greeting'
                             component={() => <Greeting history={this}/>}

@@ -8,7 +8,7 @@ class Header extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="text">
                 {this.buildHelloString()}
             </div>
         );

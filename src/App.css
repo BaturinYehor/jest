@@ -58,6 +58,24 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eb1747', end
   border-radius: 10px;
 }
 
+.main {
+  height: 80vh;
+  background: #e6e6e6;
+  box-shadow: 0 0 50px -10px rgba(0,0,0,1.5);
+  width: 60%;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.greeting {
+  height: 60vh;
+  background: #e6e6e6;
+  box-shadow: 0 0 50px -10px rgba(0,0,0,1.5);
+  width: 60%;
+  padding: 30px;
+  border-radius: 10px;
+}
+
 .text {
   color: #424242;
   font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;

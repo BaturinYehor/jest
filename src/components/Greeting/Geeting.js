@@ -30,7 +30,7 @@ class Greeting extends React.Component {
         return (
             <div>
                 <div className="wrapper">
-                    <div className="main">
+                    <div className="greeting">
                         <div className="text">
                 Give us your name and let's get straight to it!
                         </div>
