@@ -23,8 +23,11 @@ class Main extends React.Component {
                             <div className="col-sm-6">
                                 <FetchApiForm/>
                             </div>
-                            <div className="col-sm-6">
-                                <CalculatorForm />
+                            <div className="col-sm-1">
+                                <div className="headerdivider"></div>
+                            </div>
+                            <div className="col-sm-5">
+                                <CalculatorForm/>
                             </div>
                         </div>
                     </div>

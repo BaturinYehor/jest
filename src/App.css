@@ -1,174 +1,190 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+    animation: App-logo-spin infinite 20s linear;
+    height: 40vmin;
+    pointer-events: none;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .wrapper {
-height: 100vh;
-display: flex;
-justify-content: center;
-align-items: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-background: rgba(235,23,71,1);
-background: -moz-linear-gradient(top, rgba(235,23,71,1) 0%, rgba(235,23,71,1) 59%, rgba(0,172,238,1) 60%, rgba(0,172,238,1) 60%, rgba(0,172,238,1) 100%);
-background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(235,23,71,1)), color-stop(59%, rgba(235,23,71,1)), color-stop(60%, rgba(0,172,238,1)), color-stop(60%, rgba(0,172,238,1)), color-stop(100%, rgba(0,172,238,1)));
-background: -webkit-linear-gradient(top, rgba(235,23,71,1) 0%, rgba(235,23,71,1) 59%, rgba(0,172,238,1) 60%, rgba(0,172,238,1) 60%, rgba(0,172,238,1) 100%);
-background: -o-linear-gradient(top, rgba(235,23,71,1) 0%, rgba(235,23,71,1) 59%, rgba(0,172,238,1) 60%, rgba(0,172,238,1) 60%, rgba(0,172,238,1) 100%);
-background: -ms-linear-gradient(top, rgba(235,23,71,1) 0%, rgba(235,23,71,1) 59%, rgba(0,172,238,1) 60%, rgba(0,172,238,1) 60%, rgba(0,172,238,1) 100%);
-background: linear-gradient(to bottom, rgba(235,23,71,1) 0%, rgba(235,23,71,1) 59%, rgba(0,172,238,1) 60%, rgba(0,172,238,1) 60%, rgba(0,172,238,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eb1747', endColorstr='#00acee', GradientType=0 );
+    background: rgba(235, 23, 71, 1);
+    background: -moz-linear-gradient(top, rgba(235, 23, 71, 1) 0%, rgba(235, 23, 71, 1) 59%, rgba(0, 172, 238, 1) 60%, rgba(0, 172, 238, 1) 60%, rgba(0, 172, 238, 1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(235, 23, 71, 1)), color-stop(59%, rgba(235, 23, 71, 1)), color-stop(60%, rgba(0, 172, 238, 1)), color-stop(60%, rgba(0, 172, 238, 1)), color-stop(100%, rgba(0, 172, 238, 1)));
+    background: -webkit-linear-gradient(top, rgba(235, 23, 71, 1) 0%, rgba(235, 23, 71, 1) 59%, rgba(0, 172, 238, 1) 60%, rgba(0, 172, 238, 1) 60%, rgba(0, 172, 238, 1) 100%);
+    background: -o-linear-gradient(top, rgba(235, 23, 71, 1) 0%, rgba(235, 23, 71, 1) 59%, rgba(0, 172, 238, 1) 60%, rgba(0, 172, 238, 1) 60%, rgba(0, 172, 238, 1) 100%);
+    background: -ms-linear-gradient(top, rgba(235, 23, 71, 1) 0%, rgba(235, 23, 71, 1) 59%, rgba(0, 172, 238, 1) 60%, rgba(0, 172, 238, 1) 60%, rgba(0, 172, 238, 1) 100%);
+    background: linear-gradient(to bottom, rgba(235, 23, 71, 1) 0%, rgba(235, 23, 71, 1) 59%, rgba(0, 172, 238, 1) 60%, rgba(0, 172, 238, 1) 60%, rgba(0, 172, 238, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eb1747', endColorstr='#00acee', GradientType=0);
 
 }
 
 .main {
-  height: 60vh;
-  background: #e6e6e6;
-  box-shadow: 0 0 50px -10px rgba(0,0,0,1.5);
-  width: 60%;
-  padding: 30px;
-  border-radius: 10px;
+    height: 60vh;
+    background: #e6e6e6;
+    box-shadow: 0 0 50px -10px rgba(0, 0, 0, 1.5);
+    width: 60%;
+    padding: 30px;
+    border-radius: 10px;
 }
 
 .main {
-  height: 80vh;
-  background: #e6e6e6;
-  box-shadow: 0 0 50px -10px rgba(0,0,0,1.5);
-  width: 60%;
-  padding: 30px;
-  border-radius: 10px;
+    height: 80vh;
+    background: #e6e6e6;
+    box-shadow: 0 0 50px -10px rgba(0, 0, 0, 1.5);
+    width: 60%;
+    padding: 30px;
+    border-radius: 10px;
 }
 
 .greeting {
-  height: 60vh;
-  background: #e6e6e6;
-  box-shadow: 0 0 50px -10px rgba(0,0,0,1.5);
-  width: 60%;
-  padding: 30px;
-  border-radius: 10px;
+    height: 60vh;
+    background: #e6e6e6;
+    box-shadow: 0 0 50px -10px rgba(0, 0, 0, 1.5);
+    width: 60%;
+    padding: 30px;
+    border-radius: 10px;
 }
 
 .text {
-  color: #424242;
-  font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
-  letter-spacing:0.1em;
-  text-align:center;
-  text-transform: lowercase;
-  font-size: 14pt;
-  font-variant: small-caps;
+    color: #424242;
+    font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
+    letter-spacing: 0.1em;
+    text-align: center;
+    text-transform: lowercase;
+    font-size: 12pt;
+    font-variant: small-caps;
+}
+
+.board {
+    background: #00ACEE;
+    border-radius: 5px;
+    width: 90%;
+    height: 100%;
+    margin-top: 5px;
 }
 
 .form {
-  height: 80vh;
-  padding-top: 100px;
-  padding-left: 50px;
-  border-top: 2px solid #00ACEE;
-  border-bottom: 2px solid #00ACEE;
-  border-right: 2px solid #00ACEE;
+    height: 80vh;
+    padding-top: 100px;
+    padding-left: 50px;
+    border-top: 2px solid #00ACEE;
+    border-bottom: 2px solid #00ACEE;
+    border-right: 2px solid #00ACEE;
 }
 
 input[type="text"] {
-  color: #424242;
-  background-color: transparent;
-  border: 0;
-  border-bottom: solid 2px #EB1747;
-  width: 50%;
-  padding-bottom: 4px;
-  font-weight: lighter;
-  margin-bottom: 30px;
-  margin-right: 20px;
-  font-size: 20px;
-  outline: none;
+    color: #424242;
+    background-color: transparent;
+    border: 0;
+    border-bottom: solid 2px #EB1747;
+    min-width: 20vh;
+    width: 50%;
+    padding-bottom: 4px;
+    font-weight: lighter;
+    margin-bottom: 30px;
+    margin-right: 20px;
+    font-size: 20px;
+    outline: none;
+    margin: 5px;
 }
 
 .get-name-button {
-  position: absolute;
-  left:    0;
-  bottom:   0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
 }
 
 .get-name-form {
-  position:relative;
-  margin-top: 50px;
-  height: 45vh;
+    position: relative;
+    margin-top: 20px;
+    height: 45vh;
 }
 
 .get-api-form {
-  background: #00ACEE;
-  position:relative;
-  margin-top: 50px;
-  height: 45vh;
-  border-radius: 5px;
-  color: #1f1f1f;
-  padding: 15px;
-
+    background: #00ACEE;
+    position: relative;
+    margin-top: 50px;
+    height: 45vh;
+    border-radius: 5px;
+    color: #1f1f1f;
+    margin-right: 30px;
 }
 
 .img {
-  height: 15vh;
-  width: 15vh;
-  background-blend-mode: multiply;
-  background: #e6e6e6 url("nix.png") no-repeat center center;
-  background-size: contain;
-  position: absolute;
-  left:    0;
-  bottom:   0;
+    height: 15vh;
+    width: 15vh;
+    background-blend-mode: multiply;
+    background: #e6e6e6 url("nix.png") no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+
+.headerdivider {
+    margin-top: 10px;
+    border-left: 2px solid #EB1747;
+    height: 100%;
 }
 
 input::-webkit-input-placeholder {
-  color: #00ACEE;
+    color: #00ACEE;
 }
 
 input::-moz-placeholder {
-  text-transform: lowercase;
+    text-transform: lowercase;
 }
 
 button {
-  border: 2px solid #EB1747;
-  border-bottom: 4px solid #EB1747;
-  padding: 8px 20px;
-  border-radius: 3px;
-  cursor: pointer;
-  background-color: #EB1747;
-  color: #fff;
-  outline: none!important;
+    border: 0px solid #EB1747;
+    padding: 8px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: #EB1747;
+    color: #fff;
+    outline: none !important;
+    margin-left: 15px;
 }
 
 button:hover {
-  border-bottom: 2px solid #00ACEE;
-  position: relative;
-  top: 2px;
+    border-bottom: 2px solid #00ACEE;
+    position: relative;
+    top: 2px;
 }
 
 .error {
-  color: #EB1747;
-  font-weight: bold;
+    color: #EB1747;
+    font-weight: bold;
 }
