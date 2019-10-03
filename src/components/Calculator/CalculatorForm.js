@@ -12,27 +12,27 @@ class CalculatorForm extends React.Component {
         }
     };
 
-    calculate = (e) => {
+    handleSubmit = (e) => {
         e.preventDefault();
 
         let x = e.target['x'].value;
         let y = e.target['y'].value;
+        this.calculate2(x, y)
 
-        if (!isNaN(x) && !isNaN(y)) {
-            if (isNaN(x) && isNaN(y)) {
-                throw new Error('Not x neither y was set');
-            } else {
-                throw new Error('Not x neither y was set');
-            }
-        } else {
-            this.setState({message: x + y})
-        }
     };
+
+    calculate2(x, y) {
+        if (isNaN(x) || isNaN(y)) {
+            this.setState({message: x + y})
+        } else {
+            this.setState({message: parseInt(x) + parseInt(y)})
+        }
+    }
 
     render() {
         return (
             <div>
-                <form onSubmit={this.calculate}>
+                <form onSubmit={this.handleSubmit}>
                     <div className="get-name-form">
                         <div className="row">
                             <div className="board">
