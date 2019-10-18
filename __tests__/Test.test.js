@@ -2,6 +2,10 @@ import React from 'react';
 import Calculator from '../src/components/Calculator/CalculatorForm';
 import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+
+
+Enzyme.configure({ adapter: new Adapter() });
 
 test('renders correctly', () => {
     const tree = renderer.create(<Calculator />).toJSON();
