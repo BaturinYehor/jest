@@ -78,8 +78,12 @@ exports[`Counter snapshot renders 1`] = `
           className="col-sm-9"
         />
         <div
-          className="img"
-        />
+          className="col-sm-1"
+        >
+          <div
+            className="img"
+          />
+        </div>
       </div>
     </div>
   </form>

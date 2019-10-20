@@ -145,3 +145,6 @@ describe('Login', () => {
     expect(authenticate).toBeCalledTimes(0);
   });
 });
+
+sudo yarn test:debug --watch
+https://www.robinwieruch.de/react-testing-jest-enzyme

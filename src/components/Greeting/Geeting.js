@@ -19,7 +19,9 @@ class Greeting extends React.Component {
     };
 
     isNameFilled() {
-        return this.props.history.state.name.length > 0;
+        if(this.state.history) {
+            return this.props.history.state.name.length > 0;
+        }
     };
 
     render() {

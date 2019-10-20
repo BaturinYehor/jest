@@ -14,7 +14,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest",
+    "test": "jest --config ./jest.config.json",
+    "test:watch": "yarn run test -- --watch",
+    "test:debug": "node --inspect node_modules/.bin/jest --runInBand jest --config ./jest.config.json",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -38,6 +40,6 @@
     "enzyme-adapter-react-16": "^1.15.1",
     "jest-environment-enzyme": "^7.1.1",
     "jest-enzyme": "^7.1.1",
-    "react-test-renderer": "^16.10.1"
+    "react-test-renderer": "^16.10.2"
   }
 }
