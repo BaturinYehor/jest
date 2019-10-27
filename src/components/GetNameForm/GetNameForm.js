@@ -1,38 +1,22 @@
 import React from "react";
-import {Redirect} from "react-router-dom"
 
-class Form extends React.Component {
+class GetNameForm extends React.Component {
 
     constructor(props) {
         super(props);
+
         this.state = {
-            name: "",
-            error: ""
-        }
-    };
-
-    handleChange = (e) => {
-        e.preventDefault();
-
-        let name = e.target[0].value;
-        if (name.length === 0) {
-            this.setState({error: "Name can't be empty"})
-        } else {
-            this.setState({name: name});
-            this.props.getName(name)
+            handleSubmit: () => {},
         }
     };
 
     render() {
-        if (this.state.name) {
-            return <Redirect to='/main'/>
-        }
         return (
             <div>
-                <form onSubmit={this.handleChange}>
+                <form onSubmit={this.props.handleSubmit}>
                     <div className="get-name-form">
                         <div className="row">
-                            <input type="text" name="name" placeholder="Name"/>
+                            <input type="text" name="name" placeholder="name"/>
                         </div>
                         <div className="row h-50">
                             <div className="col-sm-10">
@@ -46,12 +30,9 @@ class Form extends React.Component {
                         </div>
                     </div>
                 </form>
-                <div className="error">
-                    {this.state.error}
-                </div>
             </div>
         );
     }
 }
 
-export default Form
+export default GetNameForm

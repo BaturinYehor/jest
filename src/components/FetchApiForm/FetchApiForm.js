@@ -6,8 +6,8 @@ class Main extends React.Component {
 
     constructor(props) {
         super(props);
+
         this.state = {
-            redirectToMain: false,
             response: [],
             error: []
         }
@@ -18,10 +18,14 @@ class Main extends React.Component {
         fetch(API)
             .then(response => response.json())
             .then((data) => {
-                this.setState({response: data})
+                if (data.info) {
+                    this.setState({response: data.info});//information fetched from api
+                } else {
+                    this.setState({error: data.error.message})//can't find api to fetch
+                }
             })
             .catch((error) => {
-                this.setState({error: error})
+                this.setState({error: error})//error while fetching information from api
             });
     };
 
@@ -33,7 +37,10 @@ class Main extends React.Component {
                 </button>
                 <div className="get-api-form">
                     <div className="text">
-                        {this.state.response.info}
+                        {this.state.response}
+                        <div className="error">
+                            {this.state.error}
+                        </div>
                     </div>
                 </div>
             </div>

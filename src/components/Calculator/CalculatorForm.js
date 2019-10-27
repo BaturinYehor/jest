@@ -4,11 +4,10 @@ class CalculatorForm extends React.Component {
 
     constructor(props) {
         super(props);
+
         this.state = {
-            redirectToMain: false,
-            response: [],
-            error: [],
-            message: ""
+            error: "",
+            result: ""
         }
     };
 
@@ -17,15 +16,18 @@ class CalculatorForm extends React.Component {
 
         let x = e.target['x'].value;
         let y = e.target['y'].value;
-        this.calculate2(x, y)
-
+        this.calculate(x, y)
     };
 
-    calculate2(x, y) {
-        if (isNaN(x) || isNaN(y)) {
-            this.setState({message: x + y})
+    calculate(x, y) {
+        if (x === "" || y === "") {
+            this.setState({error: "x or y value is empty!", result: ""})
         } else {
-            this.setState({message: parseInt(x) + parseInt(y)})
+            if (isNaN(x) || isNaN(y)) {
+                this.setState({result: x + y, error: ""})
+            } else {
+                this.setState({result: parseInt(x) + parseInt(y), error: ""})
+            }
         }
     }
 
@@ -52,7 +54,7 @@ class CalculatorForm extends React.Component {
                             <div className="col-sm-6">
                                 <div className="board">
                                     <div className="text">
-                                        {this.state.message}
+                                        {this.state.result}
                                     </div>
                                 </div>
                             </div>
@@ -66,7 +68,9 @@ class CalculatorForm extends React.Component {
                                     <button>Calculate</button>
                                 </div>
                             </div>
-                            {this.state.error}
+                            <div className="error">
+                                {this.state.error}
+                            </div>
                         </div>
                         <div className="row h-50">
                             <div className="col-sm-9">

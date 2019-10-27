@@ -23,7 +23,7 @@ export default class CheckboxWithLabel extends React.Component {
                 throw new Error('Not x neither y was set');
             }
         } else {
-            this.setState({message: x + y})
+            this.setState({result: x + y})
         }
     };
 

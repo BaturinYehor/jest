@@ -113,8 +113,8 @@ describe('Login', () => {
     });
   });
 
-  it('Should appears server error message', async () => {
-    authenticate.mockRejectedValue('Server error message');
+  it('Should appears server error result', async () => {
+    authenticate.mockRejectedValue('Server error result');
 
     const { getByText, getByLabelText } = render(<LoginComponent />);
 
@@ -126,14 +126,14 @@ describe('Login', () => {
     });
     fireEvent.click(buttonElement);
 
-    await waitForElement(() => getByText('Server error message'));
+    await waitForElement(() => getByText('Server error result'));
 
     expect(authenticate).toBeCalledTimes(1);
 
-    expect(getByText('Server error message')).toBeInTheDocument();
+    expect(getByText('Server error result')).toBeInTheDocument();
   });
 
-  it('Should appears validation error message', () => {
+  it('Should appears validation error result', () => {
     const { getByText } = render(<LoginComponent />);
 
     const buttonElement = getByText('Log In');

@@ -8,6 +8,7 @@ class App extends React.Component {
 
     constructor(props) {
         super(props);
+
         this.state = {
             name: ''
         }
@@ -16,14 +17,14 @@ class App extends React.Component {
     render() {
         return (
             <BrowserRouter>
-                        <Route
-                            path='/greeting'
-                            component={() => <Greeting history={this}/>}
-                        />
-                        <Route
-                            path='/main'
-                            component={() => <Main name={this.state.name}/>}
-                        />
+                <Route
+                    path='/greeting'
+                    component={() => <Greeting history={this}/>}
+                />
+                <Route
+                    path='/main'
+                    component={() => <Main />}
+                />
             </BrowserRouter>
         )
     }

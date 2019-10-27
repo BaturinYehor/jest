@@ -1,7 +1,6 @@
 import React from "react";
 import FetchApiForm from "../FetchApiForm/FetchApiForm"
 import Header from "../Header/Header"
-import {Redirect} from "react-router-dom"
 import CalculatorForm from "../Calculator/CalculatorForm";
 
 class Main extends React.Component {

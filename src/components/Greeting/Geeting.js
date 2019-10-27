@@ -1,32 +1,35 @@
 import React from "react";
 import GetNameForm from "../GetNameForm/GetNameForm"
+import {Redirect} from "react-router";
 
 class Greeting extends React.Component {
 
     constructor(props) {
         super(props);
+
         this.state = {
-            redirectToMain: false
+            name: "",
+            error: ""
         }
     };
 
-    redirectToTarget = () => {
-        this.setState({redirectToMain: true})
-    };
+    handleSubmit = (e) => {
+        e.preventDefault();
 
-    getName = (name) => {
-        this.props.history.state.name = name;
-    };
-
-    isNameFilled() {
-        if(this.state.history) {
-            return this.props.history.state.name.length > 0;
+        let name = e.target['name'].value;
+        if (name) {
+            this.setState({name: name});
+        } else {
+            this.setState({error: "Name can't be empty"})
         }
     };
 
     render() {
-        if (this.isNameFilled()) {
-            this.redirectToTarget();
+        if (this.state.name !== "") {
+            return <Redirect to={{
+                pathname: '/main',
+                name: this.state.name
+            }}/>
         }
 
         return (
@@ -34,9 +37,12 @@ class Greeting extends React.Component {
                 <div className="wrapper">
                     <div className="greeting">
                         <div className="text">
-                Give us your name and let's get straight to it!
+                            Give us your name and let's get straight to it!
                         </div>
-                <GetNameForm getName={this.getName}/>
+                        <GetNameForm handleSubmit={this.handleSubmit}/>
+                        <div className="error">
+                            {this.state.error}
+                        </div>
                     </div>
                 </div>
             </div>
