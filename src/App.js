@@ -23,7 +23,7 @@ class App extends React.Component {
                 />
                 <Route
                     path='/main'
-                    component={() => <Main />}
+                    component={() => <Main name={this.state.name}/>}
                 />
             </BrowserRouter>
         )

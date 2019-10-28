@@ -18,14 +18,14 @@ class Greeting extends React.Component {
 
         let name = e.target['name'].value;
         if (name) {
-            this.setState({name: name});
+            this.props.history.setState({name: name});
         } else {
             this.setState({error: "Name can't be empty"})
         }
     };
 
     render() {
-        if (this.state.name !== "") {
+        if (this.props.history && this.props.history.state.name) {
             return <Redirect to={{
                 pathname: '/main',
                 name: this.state.name

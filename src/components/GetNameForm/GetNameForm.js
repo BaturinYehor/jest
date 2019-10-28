@@ -16,7 +16,7 @@ class GetNameForm extends React.Component {
                 <form onSubmit={this.props.handleSubmit}>
                     <div className="get-name-form">
                         <div className="row">
-                            <input type="text" name="name" placeholder="name"/>
+                            <input type="text" name="name" placeholder="Name"/>
                         </div>
                         <div className="row h-50">
                             <div className="col-sm-10">

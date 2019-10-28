@@ -13,7 +13,7 @@ class Main extends React.Component {
         }
     };
 
-    getApiData = async (e) => {
+    getApiData = (e) => {
         e.preventDefault();
         fetch(API)
             .then(response => response.json())

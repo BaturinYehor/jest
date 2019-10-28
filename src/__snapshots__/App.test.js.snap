@@ -70,6 +70,11 @@ exports[`Test suite snapshot renders 1`] = `
             </button>
           </div>
         </div>
+        <div
+          className="error"
+        >
+          
+        </div>
       </div>
       <div
         className="row h-50"
