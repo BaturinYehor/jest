@@ -84,27 +84,22 @@ describe('Test suite', () => {
         expect(submit).toHaveBeenCalledTimes(1);
     });
 
-    it('fetches data from api success', done => {
+    it('fetches data from api should be success', done => {
         const message = "some message";
         const URL = "https://961826c1-030a-4d64-9117-ed8352256d12.mock.pstmn.io/info";
         const mockResponse = {
             info: message
-        };
-        const e = {
-            preventDefault: () => {
-            },
         };
 
         const mockJsonPromise = Promise.resolve(mockResponse);
         const mockFetchPromise = Promise.resolve({
             json: () => mockJsonPromise,
         });
-        //jest.spyOn(global, 'fetch').mockImplementation(() => mockFetchPromise);
         global.fetch = jest.fn().mockImplementation(() => mockFetchPromise);
 
 
         const wrapper = mount(<FetchApiForm/>);
-        wrapper.instance().getApiData(e);
+        wrapper.instance().fetchApi(URL);
 
         expect(global.fetch).toHaveBeenCalledTimes(1);
         expect(global.fetch).toHaveBeenCalledWith(URL);
@@ -114,6 +109,74 @@ describe('Test suite', () => {
                 {
                     error: [],
                     response: message
+                }
+            );
+
+            global.fetch.mockClear();
+            delete global.fetch;
+            done();
+        });
+    });
+
+    it('fetches data from api should produce error', done => {
+        const errorMessage = "we were unable to find any matching requests for this method type and the mock path, '/info_dummy', in your collection.";
+        const URL = "https://961826c1-030a-4d64-9117-ed8352256d12.mock.pstmn.io/info_dummy";
+        const mockResponse = {
+            error: {
+                message: errorMessage
+            }
+        };
+
+        const mockJsonPromise = Promise.resolve(mockResponse);
+        const mockFetchPromise = Promise.resolve({
+            json: () => mockJsonPromise,
+        });
+        global.fetch = jest.fn().mockImplementation(() => mockFetchPromise);
+
+
+        const wrapper = mount(<FetchApiForm/>);
+        wrapper.instance().fetchApi(URL);
+
+        expect(global.fetch).toHaveBeenCalledTimes(1);
+        expect(global.fetch).toHaveBeenCalledWith(URL);
+
+        process.nextTick(() => {
+            expect(wrapper.state()).toEqual(
+                {
+                    error: errorMessage,
+                    response: []
+                }
+            );
+
+            global.fetch.mockClear();
+            delete global.fetch;
+            done();
+        });
+    });
+
+    it('fetches data from api should catch an exception.', done => {
+        const errorMessage = "we were unable to find any matching requests for this method type and the mock path, '/info_dummy', in your collection.";
+        const URL = "1";
+        const mockResponse = new Error('some');
+
+        const mockJsonPromise = Promise.resolve(mockResponse);
+        const mockFetchPromise = Promise.resolve({
+            json: () => mockJsonPromise,
+        });
+        global.fetch = jest.fn().mockImplementation(() => mockFetchPromise);
+
+
+        const wrapper = mount(<FetchApiForm/>);
+        wrapper.instance().fetchApi(URL);
+
+        expect(global.fetch).toHaveBeenCalledTimes(1);
+        expect(global.fetch).toHaveBeenCalledWith(URL);
+
+        process.nextTick(() => {
+            expect(wrapper.state()).toEqual(
+                {
+                    error: errorMessage,
+                    response: []
                 }
             );
 

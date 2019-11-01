@@ -13,26 +13,36 @@ class Main extends React.Component {
         }
     };
 
-    getApiData = (e) => {
+    getInformation = (e) => {
         e.preventDefault();
-        fetch(API)
-            .then(response => response.json())
-            .then((data) => {
-                if (data.info) {
-                    this.setState({response: data.info});//information fetched from api
+        this.fetchApi(API);
+    };
+
+    fetchApi(api) {
+        fetch(api)
+            .then(response => {
+                if(response.ok) {
+                    response.json()
+                        .then((data) => {
+                        if (data.info) {
+                            this.setState({response: data.info});//information fetched from api
+                        } else {
+                            this.setState({error: data.error.message})//can't find api to fetch
+                        }
+                    })
                 } else {
-                    this.setState({error: data.error.message})//can't find api to fetch
+                    throw new Error('Error while fetching api');
                 }
             })
             .catch((error) => {
                 this.setState({error: error})//error while fetching information from api
             });
-    };
+    }
 
     render() {
         return (
             <div>
-                <button onClick={this.getApiData}>
+                <button onClick={this.getInformation}>
                     What is jest?
                 </button>
                 <div className="get-api-form">

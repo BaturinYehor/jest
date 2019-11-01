@@ -149,3 +149,5 @@ describe('Login', () => {
 sudo yarn test:debug --watch
 https://www.robinwieruch.de/react-testing-jest-enzyme
 fetch example https://swizec.com/blog/the-big-mac-index-and-jest-fetch-testing/swizec/9187
+
+как првоерить выбрасываемое исключение в fetch методе?
