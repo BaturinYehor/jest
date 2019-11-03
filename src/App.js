@@ -1,10 +1,11 @@
 import React from 'react';
 import {Route} from "react-router-dom"
 import {BrowserRouter} from 'react-router-dom/cjs/react-router-dom.min';
-import Greeting from './components/Greeting/Geeting';
+import GreetingForm from './components/GreetingForm/GeetingForm';
 import Main from './components/Main/Main';
 
-class App extends React.Component {
+class
+App extends React.Component {
 
     constructor(props) {
         super(props);
@@ -19,7 +20,7 @@ class App extends React.Component {
             <BrowserRouter>
                 <Route
                     path='/greeting'
-                    component={() => <Greeting history={this}/>}
+                    component={() => <GreetingForm history={this}/>}
                 />
                 <Route
                     path='/main'

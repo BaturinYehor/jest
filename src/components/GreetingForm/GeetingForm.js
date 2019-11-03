@@ -2,7 +2,7 @@ import React from "react";
 import GetNameForm from "../GetNameForm/GetNameForm"
 import {Redirect} from "react-router";
 
-class Greeting extends React.Component {
+class GreetingForm extends React.Component {
 
     constructor(props) {
         super(props);
@@ -50,4 +50,4 @@ class Greeting extends React.Component {
     }
 }
 
-export default Greeting
+export default GreetingForm

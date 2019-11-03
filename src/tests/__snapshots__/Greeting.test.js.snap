@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test suite snapshot renders 1`] = `
+exports[`Test suite CalculatorForm should match snapshot 1`] = `
 <div>
   <form
     onSubmit={[Function]}

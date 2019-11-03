@@ -18,24 +18,21 @@ class Main extends React.Component {
         this.fetchApi(API);
     };
 
+
     fetchApi(api) {
         fetch(api)
             .then(response => {
-                if(response.ok) {
-                    response.json()
-                        .then((data) => {
+                response.json()
+                    .then((data) => {
                         if (data.info) {
                             this.setState({response: data.info});//information fetched from api
                         } else {
                             this.setState({error: data.error.message})//can't find api to fetch
                         }
                     })
-                } else {
-                    throw new Error('Error while fetching api');
-                }
             })
             .catch((error) => {
-                this.setState({error: error})//error while fetching information from api
+                this.setState({error: error.message})//error while fetching information from api
             });
     }
 

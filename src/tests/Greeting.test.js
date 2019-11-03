@@ -1,41 +1,29 @@
-/*
 import React from 'react';
 import renderer from 'react-test-renderer';
-import CalculatorForm from './components/Calculator/CalculatorForm'
-import GetNameForm from './components/GetNameForm/GetNameForm'
-import GreetingForm from './components/GreetingForm/Geeting'
-import FetchApiForm from './components/FetchApiForm/FetchApiForm'
-import App from './App'
+import GetNameForm from '../components/GetNameForm/GetNameForm'
+import GreetingForm from '../components/GreetingForm/GeetingForm'
+import FetchApiForm from '../components/FetchApiForm/FetchApiForm'
+import Main from '../components/Main/Main'
+import App from '../App'
 import {mount} from 'enzyme';
+import {BrowserRouter} from 'react-router-dom/cjs/react-router-dom.min';
 
 describe('Test suite', () => {
 
-    it('CalculatorForm should match snapshot', () => {
-        const component = renderer.create(<CalculatorForm/>);
+    it('Greeting form should match snapshot', () => {
+        const component = renderer.create(<GreetingForm/>);
         let tree = component.toJSON();
         expect(tree).toMatchSnapshot();
     });
 
-    it('GreetingForm form should have exactly one GetNameForm', () => {
+    it('Greeting form form should have exactly one GetNameForm', () => {
         const wrapper = mount(<GreetingForm/>);
         expect(wrapper.find(GetNameForm).length).toEqual(1);
-    });
-
-    it('Button should have correct text', () => {
-        const wrapper = mount(<GreetingForm/>);
-        const counterWrapper = wrapper.find(GetNameForm);
-        expect(counterWrapper.find("GetNameForm").find("button").text()).toEqual('Get information');
     });
 
     it('GreetingForm text should be correct', () => {
         const wrapper = mount(<GreetingForm/>);
         expect(wrapper.find(".text").text()).toEqual('Give us your name and let\'s get straight to it!');
-    });
-
-    it('Input field should have correct placeholder', () => {
-        const wrapper = mount(<GreetingForm/>);
-        const counterWrapper = wrapper.find(GetNameForm);
-        expect(counterWrapper.find("GetNameForm").find("input").props().placeholder).toEqual("Name");
     });
 
     it('Error should arise when passing empty name', () => {
@@ -78,6 +66,19 @@ describe('Test suite', () => {
         const wrapper = mount(<GetNameForm handleSubmit={submit}/>);
         wrapper.find('button').simulate('submit');
         expect(submit).toHaveBeenCalledTimes(1);
+    });
+
+    it('should redirect to main', () => {
+        const history = {
+            state: {
+                name: "some name"
+            }
+        };
+
+        const wrapper = mount(<BrowserRouter>
+            <GreetingForm history={history}/>
+        </BrowserRouter>);
+        const wrapper2 = mount(<Main/>);
     });
 
     it('Fetch must be successful', done => {
@@ -177,4 +178,4 @@ describe('Test suite', () => {
             done();
         });
     });
-});*/
+});
