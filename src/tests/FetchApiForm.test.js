@@ -1,89 +1,18 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import GetNameForm from '../components/GetNameForm/GetNameForm'
-import GreetingForm from '../components/GreetingForm/GeetingForm'
-import FetchApiForm from '../components/FetchApiForm/FetchApiForm'
-import Main from '../components/Main/Main'
-import App from '../App'
-import {mount} from 'enzyme';
-import {BrowserRouter} from 'react-router-dom/cjs/react-router-dom.min';
+import {mount} from "enzyme/build";
+import FetchApiForm from "../components/FetchApiForm/FetchApiForm";
+import React from "react";
 
-describe('Test suite', () => {
+const URL = "https://someurl";
 
-    it('Greeting form should match snapshot', () => {
-        const component = renderer.create(<GreetingForm/>);
-        let tree = component.toJSON();
-        expect(tree).toMatchSnapshot();
-    });
+it('Button should have correct text', () => {
+    const wrapper = mount(<FetchApiForm/>);
+    expect(wrapper.find("button").text()).toEqual('What is jest?');
+});
 
-    it('Greeting form form should have exactly one GetNameForm', () => {
-        const wrapper = mount(<GreetingForm/>);
-        expect(wrapper.find(GetNameForm).length).toEqual(1);
-    });
-
-    it('GreetingForm text should be correct', () => {
-        const wrapper = mount(<GreetingForm/>);
-        expect(wrapper.find(".text").text()).toEqual('Give us your name and let\'s get straight to it!');
-    });
-
-    it('Error should arise when passing empty name', () => {
-        let expectedName = "Name can't be empty";
-        const wrapper = mount(<GreetingForm/>);
-        const e = {
-            preventDefault: () => {
-            },
-            target: {
-                name: {
-                    value: ""
-                }
-            }
-        };
-        wrapper.instance().handleSubmit(e);
-        expect(wrapper.instance().state.error).toEqual(expectedName);
-    });
-
-    it('Name should be set', () => {
-        const expectedName = "Nick";
-
-        const appContainer = mount(<App/>);
-        const greetingContainer = mount(<GreetingForm history={appContainer.instance()}/>);
-        const e = {
-            preventDefault: () => {
-            },
-
-            target: {
-                name: {
-                    value: expectedName
-                }
-            }
-        };
-        greetingContainer.instance().handleSubmit(e);
-        expect(appContainer.instance().state.name).toEqual(expectedName);
-    });
-
-    it('Submit handler should be called', () => {
-        let submit = jest.fn();
-        const wrapper = mount(<GetNameForm handleSubmit={submit}/>);
-        wrapper.find('button').simulate('submit');
-        expect(submit).toHaveBeenCalledTimes(1);
-    });
-
-    it('should redirect to main', () => {
-        const history = {
-            state: {
-                name: "some name"
-            }
-        };
-
-        const wrapper = mount(<BrowserRouter>
-            <GreetingForm history={history}/>
-        </BrowserRouter>);
-        const wrapper2 = mount(<Main/>);
-    });
+describe('FetchApiForm test suite', () => {
 
     it('Fetch must be successful', done => {
         const message = "Fetched successfully";
-        const URL = "https://someurl";
         const mockResponse = {
             info: message
         };
@@ -116,7 +45,6 @@ describe('Test suite', () => {
 
     it('Fetch should produce error', done => {
         const errorMessage = "we were unable to find any matching requests for this method type and the mock path, '/info_dummy', in your collection.";
-        const URL = "https://someurl";
         const mockResponse = {
             error: {
                 message: errorMessage
@@ -151,7 +79,6 @@ describe('Test suite', () => {
 
     it('Fetch should catch an error', done => {
         const errorMessage = "we were unable to find any matching requests for this method type and the mock path, '/info_dummy', in your collection.";
-        const URL = "https://961826c1-030a-4d64-9117-ed8352256d12.mock.pstmn.io/info_dummy";
         const mockResponse = {
             message: errorMessage
         };

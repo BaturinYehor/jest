@@ -8,7 +8,6 @@ class GreetingForm extends React.Component {
         super(props);
 
         this.state = {
-            name: "",
             error: ""
         }
     };
@@ -27,8 +26,7 @@ class GreetingForm extends React.Component {
     render() {
         if (this.props.history && this.props.history.state.name) {
             return <Redirect to={{
-                pathname: '/main',
-                name: this.state.name
+                pathname: '/main'
             }}/>
         }
 

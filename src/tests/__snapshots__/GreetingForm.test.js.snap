@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test suite GreetingForm should match snapshot 1`] = `
+<div>
+  <div
+    className="wrapper"
+  >
+    <div
+      className="greeting"
+    >
+      <div
+        className="text"
+      >
+        Give us your name and let's get straight to it!
+      </div>
+      <div>
+        <form
+          onSubmit={[Function]}
+        >
+          <div
+            className="get-name-form"
+          >
+            <div
+              className="row"
+            >
+              <input
+                name="name"
+                placeholder="Name"
+                type="text"
+              />
+            </div>
+            <div
+              className="row h-50"
+            >
+              <div
+                className="col-sm-10"
+              >
+                <div
+                  className="get-name-button"
+                >
+                  <button>
+                    Get information
+                  </button>
+                </div>
+              </div>
+              <div
+                className="col-sm-2"
+              >
+                <div
+                  className="img"
+                />
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div
+        className="error"
+      >
+        
+      </div>
+    </div>
+  </div>
+</div>
+`;
