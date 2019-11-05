@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FetchApiForm should match snapshot 1`] = `
+<div>
+  <button
+    onClick={[Function]}
+  >
+    What is jest?
+  </button>
+  <div
+    className="get-api-form"
+  >
+    <div
+      className="text"
+    >
+      <div
+        className="error"
+      />
+    </div>
+  </div>
+</div>
+`;

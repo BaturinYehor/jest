@@ -1,12 +1,28 @@
 import {mount} from "enzyme/build";
 import FetchApiForm from "../components/FetchApiForm/FetchApiForm";
 import React from "react";
+import renderer from "react-test-renderer";
 
 const URL = "https://someurl";
+
+it('FetchApiForm should match snapshot', () => {
+    const component = renderer.create(<FetchApiForm/>);
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+});
 
 it('Button should have correct text', () => {
     const wrapper = mount(<FetchApiForm/>);
     expect(wrapper.find("button").text()).toEqual('What is jest?');
+});
+
+it('Button should call handler', () => {
+    const wrapper = mount(<FetchApiForm/>);
+    const instance = wrapper.instance();
+    const spy = jest.spyOn(instance, 'getInformation');
+    instance.forceUpdate();
+    wrapper.find('button').simulate('click');
+    expect(spy).toHaveBeenCalledTimes(1);
 });
 
 describe('FetchApiForm test suite', () => {

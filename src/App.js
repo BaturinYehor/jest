@@ -2,7 +2,7 @@ import React from 'react';
 import {Route} from "react-router-dom"
 import {BrowserRouter} from 'react-router-dom/cjs/react-router-dom.min';
 import GreetingForm from './components/GreetingForm/GeetingForm';
-import Main from './components/Main/Main';
+import MainForm from './components/MainForm/MainForm';
 
 class
 App extends React.Component {
@@ -24,7 +24,7 @@ App extends React.Component {
                 />
                 <Route
                     path='/main'
-                    component={() => <Main name={this.state.name}/>}
+                    component={() => <MainForm name={this.state.name}/>}
                 />
             </BrowserRouter>
         )

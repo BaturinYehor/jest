@@ -2,12 +2,13 @@ import React from "react";
 import FetchApiForm from "../FetchApiForm/FetchApiForm"
 import Header from "../Header/Header"
 import CalculatorForm from "../Calculator/CalculatorForm";
+import {Redirect} from "react-router";
 
-class Main extends React.Component {
+class MainForm extends React.Component {
 
     render() {
         if (!this.props.name) {
-            //  return <Redirect to='/greeting'/>
+            return <Redirect to='/greeting'/>
         }
         return (
             <div className="wrapper">
@@ -36,4 +37,4 @@ class Main extends React.Component {
     }
 }
 
-export default Main
+export default MainForm

@@ -25,9 +25,7 @@ class GreetingForm extends React.Component {
 
     render() {
         if (this.props.history && this.props.history.state.name) {
-            return <Redirect to={{
-                pathname: '/main'
-            }}/>
+            return <Redirect to={{pathname: '/main'}}/>
         }
 
         return (
