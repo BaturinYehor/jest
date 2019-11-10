@@ -14,19 +14,24 @@ class CalculatorForm extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault();
 
+        if (!e.target['x'] || !e.target['y']) {
+            this.setState({error: "x or y value is empty!", result: ""});
+            return
+        }
+
         let x = e.target['x'].value;
         let y = e.target['y'].value;
-        this.calculate(x, y)
+        this.setState(this.calculate(x, y))
     };
 
     calculate(x, y) {
-        if (x === "" || y === "") {
-            this.setState({error: "x or y value is empty!", result: ""})
+        if (!x || x === "" || !y || y === "") {
+            return {error: "x or y value is empty!", result: ""}
         } else {
             if (isNaN(x) || isNaN(y)) {
-                this.setState({result: x + y, error: ""})
+                return {result: x + y, error: ""}
             } else {
-                this.setState({result: parseInt(x) + parseInt(y), error: ""})
+                return {result: parseInt(x) + parseInt(y), error: ""}
             }
         }
     }

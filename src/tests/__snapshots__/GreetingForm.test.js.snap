@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`GreetingForm test suite GreetingForm should match snapshot 1`] = `
+exports[`GreetingForm Should match snapshot 1`] = `
 <div>
   <div
     className="wrapper"

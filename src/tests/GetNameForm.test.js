@@ -3,22 +3,30 @@ import GetNameForm from '../components/GetNameForm/GetNameForm'
 import {mount} from 'enzyme';
 import renderer from "react-test-renderer";
 
-describe('GetNameForm test suite', () => {
+let wrapper;
+let instance;
 
-    it('GetNameForm should match snapshot', () => {
+describe('GetNameForm', () => {
+
+    beforeEach(() => {
+        wrapper = mount(<GetNameForm/>);
+        instance = wrapper.instance();
+    });
+
+    it('Should match snapshot', () => {
         const component = renderer.create(<GetNameForm/>);
         let tree = component.toJSON();
         expect(tree).toMatchSnapshot();
     });
 
     it('Button should have correct text', () => {
-        const wrapper = mount(<GetNameForm/>);
-        expect(wrapper.find("button").text()).toEqual('Get information');
+        const buttonText = "Get information";
+        expect(wrapper.find("button").text()).toEqual(buttonText);
     });
 
     it('Input field should have correct placeholder', () => {
-        const wrapper = mount(<GetNameForm/>);
-        expect(wrapper.find("input").props().placeholder).toEqual("Name");
+        const expectedPlaceholder = "Name";
+        expect(wrapper.find("input").props().placeholder).toEqual(expectedPlaceholder);
     });
 
     it('Submit handler should be called', () => {
