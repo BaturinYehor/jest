@@ -30,8 +30,8 @@ class GreetingForm extends React.Component {
 
         return (
             <div>
-                <div className="wrapper">
-                    <div className="greeting">
+                <div className="nix-background">
+                    <div className="card-form">
                         <div className="text">
                             Give us your name and let's get straight to it!
                         </div>

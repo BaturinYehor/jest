@@ -32,7 +32,7 @@
     }
 }
 
-.wrapper {
+.nix-background {
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -49,13 +49,11 @@
 
 }
 
-.main {
-    height: 60vh;
-    background: #e6e6e6;
-    box-shadow: 0 0 50px -10px rgba(0, 0, 0, 1.5);
-    width: 60%;
-    padding: 30px;
-    border-radius: 10px;
+.wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .main {
@@ -67,7 +65,7 @@
     border-radius: 10px;
 }
 
-.greeting {
+.card-form {
     height: 60vh;
     background: #e6e6e6;
     box-shadow: 0 0 50px -10px rgba(0, 0, 0, 1.5);
@@ -78,12 +76,11 @@
 
 .text {
     color: #424242;
-    font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
+    font-family: "Bitstream Charter", "Hoefler Text", Georgia, Garamond, Times, serif;
     letter-spacing: 0.1em;
     text-align: center;
     text-transform: lowercase;
     font-size: 12pt;
-    font-variant: small-caps;
 }
 
 .board {
@@ -131,6 +128,9 @@ input[type="text"] {
     height: 45vh;
 }
 
+.not-found-page-form {
+}
+
 .get-api-form {
     background: #00ACEE;
     position: relative;
@@ -150,10 +150,11 @@ input[type="text"] {
     position: absolute;
     left: 0;
     bottom: 0;
+    float: left;
 }
 
 
-.headerdivider {
+.header-divider {
     margin-top: 10px;
     border-left: 2px solid #EB1747;
     height: 100%;

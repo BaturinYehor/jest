@@ -11,7 +11,7 @@ class MainForm extends React.Component {
             return <Redirect to='/greeting'/>
         }
         return (
-            <div className="wrapper">
+            <div className="nix-background">
                 <div className="main">
                     <div className="container">
                         <div className="row">
@@ -24,7 +24,7 @@ class MainForm extends React.Component {
                                 <FetchApiForm/>
                             </div>
                             <div className="col-sm-1">
-                                <div className="headerdivider"></div>
+                                <div className="header-divider"></div>
                             </div>
                             <div className="col-sm-5">
                                 <CalculatorForm/>

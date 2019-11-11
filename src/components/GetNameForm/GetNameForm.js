@@ -14,7 +14,7 @@ class GetNameForm extends React.Component {
                         <div className="row">
                             <input type="text" name="name" placeholder="Name"/>
                         </div>
-                        <div className="row h-50">
+                        <div className="row h-75">
                             <div className="col-sm-10">
                                 <div className="get-name-button">
                                     <button>Get information</button>
