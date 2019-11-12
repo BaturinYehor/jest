@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotFoundPage Should match snapshot 1`] = `
+<div
+  className="wrapper"
+>
+  <div
+    className="card-form"
+  >
+    <div
+      className="text"
+    >
+      <div>
+        404 page not found
+      </div>
+      <a
+        href="/greeting"
+      >
+        To greeting form
+      </a>
+      <div
+        className="img"
+      />
+    </div>
+  </div>
+</div>
+`;

@@ -16,7 +16,7 @@ exports[`GetNameForm Should match snapshot 1`] = `
         />
       </div>
       <div
-        className="row h-50"
+        className="row h-75"
       >
         <div
           className="col-sm-10"

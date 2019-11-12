@@ -2,7 +2,7 @@
 
 exports[`GreetingForm Should match snapshot 1`] = `
 <div
-  className="wrapper"
+  className="nix-background"
 >
   <div
     className="main"
@@ -52,7 +52,7 @@ exports[`GreetingForm Should match snapshot 1`] = `
           className="col-sm-1"
         >
           <div
-            className="headerdivider"
+            className="header-divider"
           />
         </div>
         <div
